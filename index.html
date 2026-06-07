@@ -73,12 +73,10 @@
     /* Profile photo card */
     .hero-panel {
       padding: 0 !important;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 30%),
-        rgba(255, 255, 255, 0.065) !important;
-      border: 1px solid var(--line) !important;
-      box-shadow: var(--shadow) !important;
+      overflow: visible;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
     .profile-card {
@@ -125,6 +123,73 @@
 
     .profile-summary .chips {
       margin-top: 0;
+    }
+
+    /* New profile layout styles */
+    .hero-profile {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      overflow: visible;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .floating-portrait {
+      padding: 0 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle at 50% 54%, rgba(34, 211, 238, 0.24), transparent 36%),
+        radial-gradient(circle at 47% 45%, rgba(139, 92, 246, 0.18), transparent 42%);
+      perspective: 1200px;
+      border-bottom: none;
+      transform-style: preserve-3d;
+    }
+
+    .profile-photo-3d {
+      width: min(100%, 430px);
+      max-height: 620px;
+      object-fit: contain;
+      object-position: bottom center;
+      filter:
+        drop-shadow(0 34px 28px rgba(0,0,0,0.34))
+        drop-shadow(-18px 18px 34px rgba(34,211,238,0.18))
+        drop-shadow(16px 14px 32px rgba(139,92,246,0.16));
+      transform: perspective(900px) rotateY(-8deg) rotateX(4deg) translateZ(36px);
+      transition: transform 0.6s ease;
+    }
+
+    .profile-photo-3d:hover {
+      transform: perspective(900px) rotateY(0deg) rotateX(0deg) translateZ(56px) scale(1.025);
+    }
+
+    .summary-card {
+      padding: 28px;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+    }
+
+    .summary-card h2 {
+      font-size: 1.7rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .summary-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .summary-card .chips {
+      justify-content: center;
+      margin-top: 18px;
     }
 
     .status-pill {
@@ -201,7 +266,6 @@
       border-bottom: 1px solid var(--line) !important;
     }
 
-    .hero-panel,
     .capability-card,
     .timeline-card,
     .project-card,
@@ -434,9 +498,9 @@
           </article>
 
           <article class="timeline-item reveal">
-            <div class="timeline-date">Apr 2025 – Present</div>
+            <div class="timeline-date">Apr 2025 – Sep 2025</div>
             <div class="timeline-card">
-              <h3>Security Analyst</h3>
+              <h3>Deputy Manager Cyber Security</h3>
               <p class="company">Mahindra Defence Systems</p>
               <p>
                 Supporting SOC operations through threat hunting, incident response, malicious activity detection,
@@ -880,7 +944,7 @@
         <div class="cert-grid">
           <article class="cert-card reveal">
             <h3>Microsoft Certified: Azure AI Engineer Associate</h3>
-            <p>Microsoft • Issued Sep 2025 • Expires Sep 2026</p>
+            <p>Microsoft • Issued Sep 2025 </p>
           </article>
 
           <article class="cert-card reveal">
@@ -900,7 +964,7 @@
 
           <article class="cert-card reveal">
             <h3>Certified Ethical Hacker</h3>
-            <p>EC-Council • Issued Dec 2023 • Expires Dec 2026</p>
+            <p>EC-Council • Issued Dec 2023 </p>
           </article>
 
           <article class="cert-card reveal">
