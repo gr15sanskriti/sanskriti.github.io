@@ -4,19 +4,246 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sanskriti Grover | Cybersecurity Trainer, Cyber Range Architect & AI Security Researcher</title>
-  <meta name="description" content="Portfolio of Sanskriti Grover — Cybersecurity Lead, Cyber Range Architect, AI Security Researcher, and Corporate Cybersecurity Trainer." />
+  <title>Sanskriti Grover | Cybersecurity Trainer, Cyber Range Consultant & AI Security Researcher</title>
+  <meta name="description" content="Portfolio of Sanskriti Grover — Cybersecurity Lead, Cyber Range Consultant, AI Security Researcher, and Corporate Cybersecurity Trainer." />
 
   <meta property="og:title" content="Sanskriti Grover | Cybersecurity Portfolio" />
-  <meta property="og:description" content="Cybersecurity Lead specializing in cyber ranges, incident response, threat hunting, AI security, SOC training, and live-fire exercises." />
+  <meta property="og:description" content="Corporate cybersecurity training, cyber range exercises, tabletop simulations, AI security workshops, and SOC readiness programs." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Dark corporate refinements: keeps the original cyber theme, removes noisy blocks -->
+  <style>
+    /* Keep the previous dark color combination, but remove the extra AI/grid noise */
+    .noise,
+    .hero-bg,
+    .grid-lines,
+    .glow,
+    .skills-strip {
+      display: none !important;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 5%, rgba(34, 211, 238, 0.13), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(139, 92, 246, 0.14), transparent 30%),
+        radial-gradient(circle at 48% 100%, rgba(16, 185, 129, 0.08), transparent 34%),
+        linear-gradient(180deg, #050816 0%, #07111f 48%, #050816 100%) !important;
+      color: var(--text) !important;
+    }
+
+    .header {
+      background: rgba(5, 8, 22, 0.78) !important;
+      border-bottom: 1px solid var(--line) !important;
+      backdrop-filter: blur(18px);
+    }
+
+    .header.scrolled {
+      background: rgba(5, 8, 22, 0.94) !important;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    .hero {
+      min-height: auto !important;
+      padding-top: 92px !important;
+      padding-bottom: 92px !important;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(34, 211, 238, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.12), transparent 28%),
+        linear-gradient(135deg, rgba(7, 17, 31, 0.98), rgba(5, 8, 22, 0.98)) !important;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--cyan), #e0f7ff, var(--violet)) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      color: transparent !important;
+    }
+
+    /* Remove the metrics and old profile detail list */
+    .hero-metrics,
+    .avatar,
+    .profile-line,
+    .profile-list {
+      display: none !important;
+    }
+
+    /* Profile photo card */
+    .hero-panel {
+      padding: 0 !important;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 30%),
+        rgba(255, 255, 255, 0.065) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .profile-card {
+      padding: 0 !important;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035)) !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .profile-photo-wrap {
+      padding: 28px 28px 0;
+      display: flex;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% 22%, rgba(34, 211, 238, 0.18), transparent 34%),
+        linear-gradient(180deg, rgba(34, 211, 238, 0.08), rgba(255,255,255,0.02));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-photo {
+      width: min(100%, 330px);
+      max-height: 460px;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 24px 46px rgba(0,0,0,0.38));
+    }
+
+    .profile-summary {
+      padding: 28px;
+    }
+
+    .profile-summary h2 {
+      font-size: 1.7rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .profile-summary p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .profile-summary .chips {
+      margin-top: 0;
+    }
+
+    .status-pill {
+      margin: 20px 20px 0;
+      background: rgba(16, 185, 129, 0.09) !important;
+      border-color: rgba(16, 185, 129, 0.25) !important;
+      color: #bbf7d0 !important;
+    }
+
+    /* Project links */
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid var(--line);
+      font-weight: 800;
+      font-size: 0.85rem;
+      transition: 0.2s ease;
+    }
+
+    .project-links a:hover {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #03111a;
+    }
+
+    /* Services: only the two highlighted platforms */
+    .service-grid.two-services {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card.featured-service {
+      padding: 32px;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .service-card.featured-service h3 {
+      font-size: 1.55rem;
+    }
+
+    .service-block {
+      margin-top: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .service-block h4 {
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .service-block li strong {
+      color: var(--text);
+    }
+
+    /* Keep card surfaces aligned with the original dark style */
+    .section-alt {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012)) !important;
+      border-top: 1px solid var(--line) !important;
+      border-bottom: 1px solid var(--line) !important;
+    }
+
+    .hero-panel,
+    .capability-card,
+    .timeline-card,
+    .project-card,
+    .service-card,
+    .cert-card,
+    .program-card,
+    .day-card,
+    .module-card,
+    .research-card,
+    .contact-card,
+    .value-grid div,
+    .training-panel,
+    .accordion {
+      background: var(--surface) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.14) !important;
+    }
+
+    .modal-card {
+      background:
+        radial-gradient(circle at top right, rgba(34,211,238,0.13), transparent 28%),
+        #07111f !important;
+      color: var(--text) !important;
+      border-color: var(--line-strong) !important;
+    }
+
+    @media (max-width: 1040px) {
+      .service-grid.two-services {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-menu {
+        background: rgba(5, 8, 22, 0.96) !important;
+        border-color: var(--line) !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
-
   <!-- ================= HEADER ================= -->
   <header class="header" id="header">
     <nav class="nav container">
@@ -36,7 +263,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#trainings">Trainings</a>
-        <a href="#services">Services</a>
+        <a href="#services">Platforms & Services</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact" class="nav-button">Contact</a>
       </div>
@@ -46,75 +273,55 @@
   <main>
     <!-- ================= HERO ================= -->
     <section class="hero section" id="home">
-      <div class="hero-bg">
-        <div class="grid-lines"></div>
-        <div class="glow glow-one"></div>
-        <div class="glow glow-two"></div>
-      </div>
-
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <p class="kicker">Cybersecurity • Cyber Range • AI Security • Corporate Training</p>
+          <p class="kicker">Cybersecurity Training • Cyber Range • Tabletop Exercises • AI Security</p>
 
           <h1>
-            Building real-world cyber resilience through
-            <span>AI, simulation & hands-on defense training.</span>
+            Helping teams build practical cyber readiness through
+            <span>hands-on training, simulations and measurable exercises.</span>
           </h1>
 
           <p class="hero-copy">
-            I am <strong>Sanskriti Grover</strong>, a Cybersecurity Lead focused on cyber range development,
-            threat hunting, incident response, SOC readiness, AI security experimentation, and corporate
-            cybersecurity training for enterprise and academic environments.
+            I am <strong>Sanskriti Grover</strong>, a Cybersecurity Lead and corporate trainer focused on
+            cyber range exercises, incident response simulations, threat hunting programs, AI security workshops,
+            SOC readiness and executive tabletop drills for enterprise and academic environments.
           </p>
 
           <div class="hero-actions">
-            <a href="#trainings" class="btn btn-primary">Explore Training Programs</a>
-            <a href="#projects" class="btn btn-ghost">View Security Projects</a>
-          </div>
-
-          <div class="hero-metrics" aria-label="Professional highlights">
-            <article>
-              <strong>3+</strong>
-              <span>Years in Cybersecurity</span>
-            </article>
-            <article>
-              <strong>AI + Cyber</strong>
-              <span>Prompt Security & AI Pentesting</span>
-            </article>
-            <article>
-              <strong>Range-Based</strong>
-              <span>Live-Fire & Tabletop Exercises</span>
-            </article>
+            <a href="#services" class="btn btn-primary">Explore Platforms & Services</a>
+            <a href="#trainings" class="btn btn-ghost">View Training Programs</a>
           </div>
         </div>
 
         <aside class="hero-panel reveal">
           <div class="status-pill">
             <span class="pulse"></span>
-            Available for training & consulting
+            Available for corporate training and consulting
           </div>
 
           <div class="profile-card">
-            <div class="avatar">SG</div>
-            <h2>Sanskriti Grover</h2>
-            <p>Cyber Security Lead</p>
-            <div class="profile-line"></div>
+            <div class="profile-photo-wrap">
+              <img
+                class="profile-photo"
+                src="e07a6559-f294-4212-84a8-fa9fef2d837e.webp"
+                alt="Sanskriti Grover"
+              />
+            </div>
 
-            <ul class="profile-list">
-              <li><span>Focus</span> Cyber Range, IR, SOC, AI Security</li>
-              <li><span>Training</span> Corporate & University Programs</li>
-              <li><span>Research</span> LLM Security, AI Attack Automation</li>
-              <li><span>Location</span> New Delhi, India</li>
-            </ul>
-          </div>
+            <div class="profile-summary">
+              <h2>Sanskriti Grover</h2>
+              <p>Cybersecurity Lead | Cyber Range Consultant | AI Security Researcher | Corporate Trainer</p>
 
-          <div class="floating-tags">
-            <span>MITRE ATT&CK</span>
-            <span>Threat Hunting</span>
-            <span>Prompt Injection</span>
-            <span>Live Fire</span>
-            <span>SIEM / EDR</span>
-            <span>Cyber Drill</span>
+              <div class="chips">
+                <span>Threat Hunting</span>
+                <span>Incident Response</span>
+                <span>Cyber Range</span>
+                <span>Tabletop Exercises</span>
+                <span>AI Security</span>
+                <span>SOC Readiness</span>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
@@ -125,7 +332,7 @@
       <div class="container split">
         <div class="section-title reveal">
           <p class="kicker">About</p>
-          <h2>Cybersecurity professional bridging strategy, operations, and hands-on simulation.</h2>
+          <h2>Cybersecurity professional bridging strategy, operations and hands-on simulation.</h2>
         </div>
 
         <div class="about-content reveal">
@@ -138,7 +345,7 @@
 
           <p>
             I specialize in converting complex cybersecurity topics into practical learning experiences. Whether it is
-            a live-fire cyber range, a tabletop crisis simulation, a threat hunting lab, or an AI security workshop,
+            a live cyber range, a tabletop crisis simulation, a threat hunting lab, or an AI security workshop,
             my goal is to help teams build confidence by investigating, responding, and making decisions in realistic
             environments.
           </p>
@@ -146,11 +353,11 @@
           <div class="value-grid">
             <div>
               <h3>What I Build</h3>
-              <p>Cyber ranges, tabletop platforms, AI security tools, SOC exercises, and realistic attack scenarios.</p>
+              <p>Cyber range scenarios, tabletop simulations, AI security tools, SOC exercises, and realistic attack storylines.</p>
             </div>
             <div>
               <h3>What I Deliver</h3>
-              <p>Corporate trainings, workshops, cyber drills, IR exercises, CTF-style sessions, and awareness programs.</p>
+              <p>Corporate trainings, hands-on exercises, cyber drills, CTF-style sessions, IR simulations, and awareness programs.</p>
             </div>
           </div>
         </div>
@@ -169,38 +376,38 @@
         <div class="capability-grid">
           <article class="capability-card reveal">
             <span>01</span>
-            <h3>Cyber Range & Live-Fire Exercises</h3>
-            <p>Scenario design, infrastructure replication, attack paths, CTF labs, blue-team response, and after-action review.</p>
+            <h3>Cyber Range & Live Exercises</h3>
+            <p>Scenario design, infrastructure replication, attack paths, CTF-style tasks, blue-team response, scoring and after-action review.</p>
           </article>
 
           <article class="capability-card reveal">
             <span>02</span>
             <h3>Threat Hunting & Incident Response</h3>
-            <p>Hypothesis-driven hunting, SIEM analysis, forensic triage, IoC/TTP mapping, containment, recovery, and reporting.</p>
+            <p>Hypothesis-driven hunting, SIEM analysis, forensic triage, IoC/TTP mapping, containment, recovery and reporting.</p>
           </article>
 
           <article class="capability-card reveal">
             <span>03</span>
-            <h3>SOC Readiness & Detection Engineering</h3>
-            <p>Alert tuning, escalation workflows, WAF/DDoS investigations, log analysis, endpoint visibility, and analyst enablement.</p>
+            <h3>SOC Readiness</h3>
+            <p>Alert triage, escalation workflows, WAF/DDoS investigations, log analysis, endpoint visibility and analyst enablement.</p>
           </article>
 
           <article class="capability-card reveal">
             <span>04</span>
             <h3>AI Security & LLM Risk</h3>
-            <p>Prompt injection, sensitive data leakage, AI risk governance, chatbot exploitation, guardrails, and LLM security controls.</p>
+            <p>Prompt injection, sensitive data leakage, AI risk governance, chatbot exploitation, guardrails and LLM security controls.</p>
           </article>
 
           <article class="capability-card reveal">
             <span>05</span>
-            <h3>AI-Powered Pentesting Automation</h3>
-            <p>Experimental AI workflows using local models, MCP, Kali tools, OSINT automation, tool execution, and result summarization.</p>
+            <h3>Automated Security Workflows</h3>
+            <p>Experimental AI workflows using local models, Kali-based tooling, OSINT automation, tool execution and result summarization.</p>
           </article>
 
           <article class="capability-card reveal">
             <span>06</span>
             <h3>Corporate Cybersecurity Training</h3>
-            <p>Executive-ready workshops, technical labs, awareness programs, tabletop exercises, and customizable training content.</p>
+            <p>Executive-ready workshops, technical labs, awareness programs, tabletop exercises and customizable training content.</p>
           </article>
         </div>
       </div>
@@ -226,7 +433,7 @@
                 exercise platforms, and driving client-facing delivery across India and ASEAN.
               </p>
               <div class="chips">
-                <span>Cyber Range</span><span>Training</span><span>AI Tabletop</span><span>NIST / CIS</span>
+                <span>Cyber Range</span><span>Training</span><span>Tabletop Exercises</span><span>NIST / CIS</span>
               </div>
             </div>
           </article>
@@ -241,7 +448,7 @@
                 web vulnerability testing, WAF/EDR/SIEM analysis, and client-focused cybersecurity solutioning.
               </p>
               <div class="chips">
-                <span>Threat Hunting</span><span>IR</span><span>Wazuh / ELK</span><span>Burp / ZAP</span>
+                <span>Threat Hunting</span><span>Incident Response</span><span>Wazuh / ELK</span><span>Burp / ZAP</span>
               </div>
             </div>
           </article>
@@ -286,7 +493,7 @@
         <div class="section-title centered reveal">
           <p class="kicker">Projects</p>
           <h2>Featured security projects</h2>
-          <p>Applied work across AI security, cyber range, automated pentesting, SOC implementation, and research.</p>
+          <p>Applied work across AI security, cyber range, automated pentesting, SOC implementation, and embedded systems.</p>
         </div>
 
         <div class="project-grid">
@@ -302,6 +509,10 @@
             </p>
             <div class="chips">
               <span>RoBERTa</span><span>Python</span><span>Prompt Security</span><span>LLM Risk</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/gr15sanskriti/Prompt-Security-Platform" target="_blank" rel="noopener" onclick="event.stopPropagation()">Platform GitHub</a>
+              <a href="https://github.com/gr15sanskriti/Prompt-Security-AI" target="_blank" rel="noopener" onclick="event.stopPropagation()">AI Model GitHub</a>
             </div>
           </article>
 
@@ -337,16 +548,16 @@
 
           <article class="project-card reveal" data-project="tabletop">
             <div class="project-top">
-              <span class="project-type">Cyber Drill Platform</span>
+              <span class="project-type">Tabletop Platform</span>
               <button class="project-open" aria-label="Open tabletop platform details">+</button>
             </div>
-            <h3>AI Tabletop Exercise Platform</h3>
+            <h3>DrillX Tabletop Exercise Platform</h3>
             <p>
-              AI-assisted tabletop platform using Node.js and Express for dynamic scenario injection, automated
-              evaluation, readiness gap analysis, and intelligent assessment outputs.
+              AI-enabled tabletop platform for measurable cyber crisis simulations, dynamic event injection,
+              automated scoring, readiness analysis, and board-ready reporting.
             </p>
             <div class="chips">
-              <span>Node.js</span><span>Express</span><span>Claude</span><span>Cyber Drill</span>
+              <span>Cyber Drill</span><span>Tabletop</span><span>Scoring</span><span>Readiness</span>
             </div>
           </article>
 
@@ -378,6 +589,9 @@
             <div class="chips">
               <span>Arduino</span><span>Embedded</span><span>TFT LCD</span><span>SPI</span>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/gr15sanskriti/tabby-2.0" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub Repository</a>
+            </div>
           </article>
         </div>
       </div>
@@ -400,7 +614,6 @@
         </div>
 
         <div class="training-panels">
-          <!-- Threat Hunting -->
           <article class="training-panel active reveal" id="hunt">
             <div class="training-header">
               <div>
@@ -408,8 +621,8 @@
                 <h3>Cyber Threat Hunting & Incident Response Workshop</h3>
                 <p>
                   A focused two-day corporate program designed to build proactive detection skills and practical
-                  incident response capabilities through theory, demos, quizzes, case studies, CTF, tabletop, and
-                  live-fire exercises.
+                  incident response capabilities through theory, demonstrations, quizzes, case studies, CTF,
+                  tabletop exercises, and a live-fire exercise in a sandboxed environment.
                 </p>
               </div>
               <div class="program-card">
@@ -465,7 +678,6 @@
             </div>
           </article>
 
-          <!-- Cyber for AI -->
           <article class="training-panel reveal" id="cyber-ai">
             <div class="training-header">
               <div>
@@ -511,7 +723,6 @@
             </div>
           </article>
 
-          <!-- AI Pentesting -->
           <article class="training-panel reveal" id="ai-pentest">
             <div class="training-header">
               <div>
@@ -552,7 +763,6 @@
             </div>
           </article>
 
-          <!-- Awareness -->
           <article class="training-panel reveal" id="awareness">
             <div class="training-header">
               <div>
@@ -582,61 +792,83 @@
       </div>
     </section>
 
-    <!-- ================= SERVICES ================= -->
+    <!-- ================= PLATFORMS & SERVICES ================= -->
     <section class="section section-alt" id="services">
       <div class="container">
         <div class="section-title centered reveal">
-          <p class="kicker">Corporate Services</p>
-          <h2>Cybersecurity training, drills, and simulation services</h2>
+          <p class="kicker">Platforms & Corporate Services</p>
+          <h2>Professional cyber range and tabletop platforms for measurable readiness.</h2>
+          <p>
+            Corporate services designed for hands-on learning, crisis readiness, security team validation,
+            and board-level evidence of preparedness.
+          </p>
         </div>
 
-        <div class="service-grid">
-          <article class="service-card reveal">
+        <div class="service-grid two-services">
+          <article class="service-card featured-service reveal">
             <div class="service-icon">⚔</div>
-            <h3>Hands-on Cyber Range Exercise</h3>
-            <p>Corporate-level cyber range exercise with customizable content for blue teams, SOC teams, and leadership observers.</p>
-            <ul>
-              <li>Incident response training</li>
-              <li>CTF-style technical challenges</li>
-              <li>SOC training on live cyber range</li>
-              <li>Custom enterprise attack scenarios</li>
-            </ul>
+            <h3>Strata CyberRange Platform</h3>
+            <p>
+              Strata CyberRange is a professional cyber training and exercise platform designed for realistic,
+              automated, and measurable defensive practice. It is not a traditional static CTF. It functions like a
+              self-refereeing cyber exercise environment where scenarios are provisioned, attacks are emulated,
+              detections are generated, and participant progress is scored automatically.
+            </p>
+
+            <div class="service-block">
+              <h4>How the CyberRange Works</h4>
+              <ul>
+                <li><strong>Scenario Provisioning:</strong> Isolated virtual environments are created for each exercise with required systems, configurations, vulnerabilities, and monitoring components.</li>
+                <li><strong>Attack Emulation:</strong> Realistic adversary behavior is triggered based on the scenario objective, allowing participants to detect and investigate meaningful activity.</li>
+                <li><strong>Detection & Evidence:</strong> Logs, events, alerts, and security telemetry are generated during the exercise to support SOC-style investigation.</li>
+                <li><strong>Automated Task Validation:</strong> Participant actions are mapped to scenario objectives so completed tasks can be detected and scored without manual grading.</li>
+                <li><strong>Scoreboard & AAR:</strong> Progress, points, gaps, and lessons learned are consolidated into a structured review for training improvement.</li>
+              </ul>
+            </div>
+
+            <div class="service-block">
+              <h4>What I Can Provide</h4>
+              <ul>
+                <li>Hands-on incident response exercises</li>
+                <li>CTF-style corporate cybersecurity challenges</li>
+                <li>SOC training on a live cyber range environment</li>
+                <li>Custom enterprise attack scenarios</li>
+                <li>Threat hunting and investigation-based exercises</li>
+                <li>After Action Review and readiness improvement reporting</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card featured-service reveal">
             <div class="service-icon">🧭</div>
-            <h3>AI-Powered Tabletop Exercise</h3>
-            <p>Facilitated tabletop simulation using an AI-powered tabletop platform for cyber drill and crisis decision-making.</p>
-            <ul>
-              <li>IR tabletop exercises</li>
-              <li>Cyber drill facilitation</li>
-              <li>Dynamic scenario injects</li>
-              <li>Readiness gap analysis</li>
-            </ul>
-          </article>
+            <h3>DrillX Tabletop Exercise Platform</h3>
+            <p>
+              DrillX is an AI-enabled tabletop platform designed to move organizations beyond compliance-only drills
+              toward measurable cyber readiness. It helps teams practice decision-making, coordination, escalation,
+              communications, and response governance during realistic cyber crisis scenarios.
+            </p>
 
-          <article class="service-card reveal">
-            <div class="service-icon">🛡</div>
-            <h3>Incident Response Training</h3>
-            <p>Structured IR programs to help teams handle preparation, identification, containment, recovery, and lessons learned.</p>
-            <ul>
-              <li>Ransomware response simulation</li>
-              <li>Evidence handling workflow</li>
-              <li>Communication and escalation</li>
-              <li>After Action Review reporting</li>
-            </ul>
-          </article>
+            <div class="service-block">
+              <h4>Platform Capabilities</h4>
+              <ul>
+                <li><strong>AI-Powered Simulation:</strong> Realistic cyber crises with live event injection and evolving incident pressure.</li>
+                <li><strong>Automated Scoring:</strong> Captures decisions, timeline gaps, missed actions, and response quality indicators.</li>
+                <li><strong>Cross-Functional Coordination:</strong> Enables IT, Legal, PR, Security, Compliance, and Leadership to train together.</li>
+                <li><strong>Board-Ready Reporting:</strong> Produces objective readiness evidence for executives, auditors, regulators, and improvement planning.</li>
+              </ul>
+            </div>
 
-          <article class="service-card reveal">
-            <div class="service-icon">📡</div>
-            <h3>SOC & Threat Hunting Training</h3>
-            <p>Hands-on analyst enablement using SIEM data, endpoint logs, alerts, IoCs, TTPs, and investigation workflows.</p>
-            <ul>
-              <li>SIEM investigation labs</li>
-              <li>Alert triage and tuning</li>
-              <li>MITRE ATT&CK mapping</li>
-              <li>Threat hunting lifecycle</li>
-            </ul>
+            <div class="service-block">
+              <h4>What I Can Provide</h4>
+              <ul>
+                <li>Incident response tabletop exercises</li>
+                <li>Cyber drill facilitation</li>
+                <li>Dynamic scenario injects</li>
+                <li>Readiness gap analysis</li>
+                <li>Decision-making and escalation evaluation</li>
+                <li>Executive-ready exercise reporting</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
@@ -704,41 +936,6 @@
       </div>
     </section>
 
-    <!-- ================= SKILLS ================= -->
-    <section class="skills-strip" aria-label="Skills">
-      <div class="skills-track">
-        <span>Threat Hunting</span>
-        <span>Incident Response</span>
-        <span>Vulnerability Assessment</span>
-        <span>Network Security</span>
-        <span>SIEM</span>
-        <span>EDR</span>
-        <span>WAF</span>
-        <span>DDoS</span>
-        <span>Python</span>
-        <span>Wireshark</span>
-        <span>MITRE ATT&CK</span>
-        <span>Node.js</span>
-        <span>Machine Learning</span>
-        <span>Prompt Security</span>
-
-        <span>Threat Hunting</span>
-        <span>Incident Response</span>
-        <span>Vulnerability Assessment</span>
-        <span>Network Security</span>
-        <span>SIEM</span>
-        <span>EDR</span>
-        <span>WAF</span>
-        <span>DDoS</span>
-        <span>Python</span>
-        <span>Wireshark</span>
-        <span>MITRE ATT&CK</span>
-        <span>Node.js</span>
-        <span>Machine Learning</span>
-        <span>Prompt Security</span>
-      </div>
-    </section>
-
     <!-- ================= RESEARCH ================= -->
     <section class="section section-alt">
       <div class="container split">
@@ -777,10 +974,6 @@
             <a href="https://www.linkedin.com/in/sanskriti-grover/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
             <a href="https://github.com/gr15sanskriti" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
           </div>
-
-          <p class="privacy-note">
-            Tip: Keep your phone number off public portfolio pages unless you intentionally want public direct calls.
-          </p>
         </div>
       </div>
     </section>
