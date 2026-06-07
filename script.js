@@ -179,7 +179,12 @@ to enhance scalability and adaptability. </p>
     kicker: "Hardware / Embedded",
     title: "Tabby 2.0",
     body: `
-      <p>Tabby 2.0 is a customized academic tablet built using Arduino Atmega microcontroller and Thin Film Transistor LCD.</p>
+      <p>Tabby 2.0 is a customized tablet for academics. Built using Arduino Atmega
+microcontroller and Thin Film Transistor LCD. Used
+Adafruit_TFTLCD and Adafruit_GFX library to enable the user to
+write with various sub folders. Also storage capacity is provided
+in the sd card using the SPI communication protocol and choose
+.bmp format </p>
       <ul>
         <li>Used Adafruit_TFTLCD and Adafruit_GFX libraries</li>
         <li>Enabled writing interface with multiple subfolders</li>
