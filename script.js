@@ -89,9 +89,17 @@ const projectContent = {
     kicker: "AI Security Platform",
     title: "Prompt Shield",
     body: `
-      <p><strong>Prompt Shield</strong> is a full-stack AI prompt security and prompt engineering platform that detects unsafe prompts and improves recoverable prompts using prompt engineering techniques.</p>
-      <p>The system uses a trained RoBERTa classifier to score prompts across injection, PII exposure, harmful content, and contextual/social-engineering risk dimensions.</p>
-      <ul>
+      <p><strong>Prompt Shield</strong> Designed a Prompt Security Tool using Ollama, incorporating a
+custom-trained model to detect risks across four categories: PII
+exposure, harmful content, contextual risks, and prompt
+injection. Implemented a scoring mechanism to generate an
+aggregate risk score and integrated an AI-based prompt
+enhancement engine (LLaMA 3.2 via Ollama) to suggest secure,
+optimized prompts while removing sensitive information to
+prevent data leakage .Focused on secure AI usage and LLM
+threat mitigation </p> 
+</p>
+<ul>
         <li>Prompt injection and jailbreak detection</li>
         <li>PII and sensitive data exposure identification</li>
         <li>Harmful or unsafe content classification</li>
@@ -121,7 +129,14 @@ const projectContent = {
     kicker: "Automated Penetration Testing",
     title: "VulnX",
     body: `
-      <p><strong>VulnX</strong> is a web-based Automated Penetration Testing Tool built using Python by integrating Metasploit to automate key security testing tasks.</p>
+      <p><strong>VulnX</strong> Designed and implemented a web-based Automated
+Penetration Testing Tool (APTT) built using Python by integrating
+Metasploit to automate critical tasks such as reconnaissance,
+vulnerability scanning, and exploitation of vulnerabilities in
+system.
+Key features included real-time scanning, vulnerability
+prioritization, and seamless integration with existing frameworks
+to enhance scalability and adaptability. </p>
       <ul>
         <li>Reconnaissance automation</li>
         <li>Vulnerability scanning workflow</li>
