@@ -1,7 +1,8 @@
 /* ===============================
    Sanskriti Grover Portfolio
    Corporate Cyber / AI Security Theme
-   Clean Dark Version
+   FULL CORRECTED STYLE.CSS
+   Fix: floating portrait above summary card, no image background box
 ================================== */
 
 :root {
@@ -72,12 +73,20 @@ img {
   display: block;
 }
 
+ul,
+ol {
+  padding-left: 1.1rem;
+}
+
+li {
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
 .container {
   width: min(100% - 32px, var(--container));
   margin: 0 auto;
 }
-
-/* Remove noisy AI/grid background elements */
 
 .noise,
 .hero-bg,
@@ -185,8 +194,7 @@ img {
 }
 
 .section-alt {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012));
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -351,8 +359,7 @@ img {
   gap: 14px;
 }
 
-/* Hide old hero extras */
-
+/* Old hero elements removed */
 .status-pill,
 .pulse,
 .avatar,
@@ -364,8 +371,7 @@ img {
   display: none !important;
 }
 
-/* Floating transparent portrait area */
-
+/* Hero right side: image floats above, card begins at summary */
 .hero-panel {
   background: transparent !important;
   border: none !important;
@@ -379,104 +385,104 @@ img {
 
 .profile-card {
   width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-photo-wrap {
   position: relative;
+  width: 100%;
+  height: 360px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 540px;
+  align-items: flex-end;
   overflow: visible;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  padding: 0 !important;
+  z-index: 3;
 }
-
-/* Soft ambient glow only — no visible card/box */
 
 .profile-photo-wrap::before {
   content: "";
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(34, 211, 238, 0.11),
-      rgba(139, 92, 246, 0.07),
-      transparent 72%
-    );
-  filter: blur(55px);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.16), rgba(139, 92, 246, 0.10), transparent 72%);
+  filter: blur(46px);
   z-index: 0;
+  pointer-events: none;
 }
 
 .profile-photo-wrap::after {
   content: "";
   position: absolute;
-  bottom: 22px;
-  width: 180px;
-  height: 24px;
+  bottom: 7px;
+  width: 155px;
+  height: 22px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.36);
-  filter: blur(14px);
+  background: rgba(0, 0, 0, 0.34);
+  filter: blur(12px);
   z-index: 0;
+  pointer-events: none;
 }
-
-/* Portrait */
 
 .profile-photo,
 .profile-photo-3d {
   position: relative;
   z-index: 2;
-  width: min(100%, 460px);
-  max-height: 540px;
+  width: min(100%, 310px);
+  max-height: 360px;
   object-fit: contain;
   object-position: center bottom;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   filter:
-    drop-shadow(0 48px 72px rgba(0, 0, 0, 0.42))
-    drop-shadow(0 0 28px rgba(34, 211, 238, 0.10));
-  animation: floatPortrait 6s ease-in-out infinite;
+    drop-shadow(0 34px 55px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 20px rgba(34, 211, 238, 0.12));
+  animation: floatPortrait 5.8s ease-in-out infinite;
 }
 
 @keyframes floatPortrait {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-
-  50% {
-    transform: translateY(-12px) scale(1.015);
-  }
-
-  100% {
-    transform: translateY(0px) scale(1);
-  }
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
 }
 
-/* Profile summary kept below image */
-
 .profile-summary {
+  width: 100%;
+  margin-top: -6px;
+  padding: 26px 24px 24px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
   text-align: center;
-  margin-top: -18px;
-  padding: 0 10px;
+  z-index: 1;
 }
 
 .profile-summary h2 {
-  font-size: 1.75rem;
-  line-height: 1.1;
+  font-size: 2rem;
+  line-height: 1.08;
   letter-spacing: -0.05em;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .profile-summary p {
   color: var(--muted);
-  font-size: 0.98rem;
-  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
 }
 
 .profile-summary .chips {
@@ -775,9 +781,7 @@ img {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  background:
-    radial-gradient(circle at top left, rgba(34,211,238,0.12), transparent 28%),
-    rgba(255,255,255,0.045);
+  background: radial-gradient(circle at top left, rgba(34,211,238,0.12), transparent 28%), rgba(255,255,255,0.045);
   box-shadow: var(--shadow);
 }
 
@@ -978,10 +982,7 @@ img {
   padding: clamp(34px, 6vw, 72px);
   border: 1px solid var(--line);
   border-radius: 36px;
-  background:
-    radial-gradient(circle at top left, rgba(34,211,238,0.20), transparent 26%),
-    radial-gradient(circle at bottom right, rgba(139,92,246,0.18), transparent 30%),
-    rgba(255,255,255,0.065);
+  background: radial-gradient(circle at top left, rgba(34,211,238,0.20), transparent 26%), radial-gradient(circle at bottom right, rgba(139,92,246,0.18), transparent 30%), rgba(255,255,255,0.065);
   box-shadow: var(--shadow);
 }
 
@@ -1060,9 +1061,7 @@ img {
   padding: 32px;
   border: 1px solid var(--line-strong);
   border-radius: 28px;
-  background:
-    radial-gradient(circle at top right, rgba(34,211,238,0.13), transparent 28%),
-    #07111f;
+  background: radial-gradient(circle at top right, rgba(34,211,238,0.13), transparent 28%), #07111f;
   box-shadow: var(--shadow);
 }
 
@@ -1136,14 +1135,18 @@ img {
     max-width: 760px;
   }
 
+  .profile-card {
+    max-width: 400px;
+  }
+
   .profile-photo-wrap {
-    height: 470px;
+    height: 320px;
   }
 
   .profile-photo,
   .profile-photo-3d {
-    width: min(100%, 390px);
-    max-height: 470px;
+    width: min(100%, 260px);
+    max-height: 320px;
   }
 
   .service-grid.two-services {
@@ -1250,23 +1253,28 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .profile-card {
+    max-width: 100%;
+  }
+
   .profile-photo-wrap {
-    height: 360px;
+    height: 280px;
   }
 
   .profile-photo,
   .profile-photo-3d {
-    width: min(100%, 300px);
-    max-height: 360px;
+    width: min(100%, 220px);
+    max-height: 280px;
   }
 
   .profile-photo-wrap::before {
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
   }
 
   .profile-summary {
-    margin-top: -8px;
+    padding: 22px 18px 20px;
+    border-radius: 22px;
   }
 
   .profile-summary h2 {
@@ -1274,11 +1282,7 @@ img {
   }
 
   .profile-summary p {
-    font-size: 0.9rem;
-  }
-
-  .profile-summary .chips {
-    justify-content: center;
+    font-size: 0.92rem;
   }
 
   .training-panel {
