@@ -1236,4 +1236,149 @@ img {
   .modal-card {
     padding: 24px;
   }
+
+   /* ===== Hero image only premium panel ===== */
+
+.image-only-panel {
+  padding: 28px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.14), transparent 28%),
+    rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1400px;
+}
+
+.profile-visual-bg {
+  position: absolute;
+  inset: auto 8% 6% 8%;
+  height: 78%;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)),
+    linear-gradient(135deg, rgba(34,211,238,0.10), rgba(139,92,246,0.10));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.34),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transform: rotateY(-10deg) rotateX(4deg);
+  backdrop-filter: blur(4px);
+}
+
+.profile-visual-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile-visual-card::before {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  width: 70%;
+  height: 34px;
+  background: radial-gradient(circle, rgba(34,211,238,0.22), rgba(0,0,0,0));
+  filter: blur(16px);
+  z-index: 0;
+}
+
+.profile-photo {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 330px);
+  max-height: 500px;
+  object-fit: contain;
+  object-position: bottom center;
+  filter:
+    drop-shadow(0 24px 40px rgba(0,0,0,0.44))
+    drop-shadow(0 10px 24px rgba(34,211,238,0.14));
+  transform: translateY(8px) scale(1.03);
+}
+
+/* optional subtle floating depth */
+.image-only-panel::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  transform: rotate(12deg);
+}
+
+.image-only-panel::after {
+  content: "";
+  position: absolute;
+  bottom: 24px;
+  left: 22px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: rgba(139,92,246,0.08);
+  filter: blur(6px);
+}
+
+/* remove old profile extras if still present */
+.status-pill,
+.profile-summary,
+.profile-card,
+.profile-line,
+.profile-list,
+.avatar,
+.hero-metrics {
+  display: none !important;
+}
+
+@media (max-width: 1040px) {
+  .image-only-panel {
+    min-height: 480px;
+  }
+
+  .profile-visual-card {
+    min-height: 430px;
+  }
+
+  .profile-photo {
+    max-height: 430px;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-only-panel {
+    min-height: 420px;
+    padding: 18px !important;
+  }
+
+  .profile-visual-card {
+    min-height: 360px;
+  }
+
+  .profile-photo {
+    max-height: 360px;
+    width: min(100%, 270px);
+  }
+}
 }
