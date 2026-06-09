@@ -530,6 +530,7 @@ img {
 .value-grid div,
 .capability-card,
 .timeline-card,
+.featured-card,
 .project-card,
 .service-card,
 .cert-card,
@@ -568,6 +569,7 @@ img {
 }
 
 .capability-card:hover,
+.featured-card:hover,
 .project-card:hover,
 .service-card:hover,
 .cert-card:hover,
@@ -662,6 +664,75 @@ img {
 
 .timeline-card p:not(.company) {
   color: var(--muted);
+}
+
+/* ================= FEATURED ================= */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.featured-card {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.featured-card-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+}
+
+.featured-media {
+  min-height: 320px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,211,238,0.14), transparent 32%),
+    rgba(255,255,255,0.035);
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.featured-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+}
+
+.featured-tag {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: var(--cyan);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.featured-card h3 {
+  margin-bottom: 12px;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.featured-card p {
+  color: var(--muted);
+}
+
+.featured-card .text-link {
+  margin-top: auto;
+  padding-top: 18px;
 }
 
 /* ================= PROJECTS ================= */
@@ -803,12 +874,14 @@ img {
 }
 
 .program-card ul,
-.service-card ul {
+.service-card ul,
+.module-card ul {
   padding-left: 18px;
 }
 
 .program-card li,
 .service-card li,
+.module-card li,
 .day-card li,
 .accordion li {
   color: var(--muted);
@@ -1179,6 +1252,7 @@ img {
 
   .hero-metrics,
   .value-grid,
+  .featured-grid,
   .project-grid,
   .service-grid,
   .day-grid {
@@ -1219,6 +1293,14 @@ img {
 
   .training-panel {
     padding: 18px;
+  }
+
+  .featured-card-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-media {
+    min-height: 220px;
   }
 
   .training-tabs {
